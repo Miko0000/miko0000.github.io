@@ -82,8 +82,9 @@
         echo "RL " . __DIR__ . "/{$dest}/{$destEntry}";
 
         shell_exec("cd {$path} && "
-          . "rm " . __DIR__ ."/{$dest}/{$destEntry} &&"
-          . "cp -L -r {$entry} " . __DIR__ . "/{$dest}/{$destEntry}"
+          . "rm " . __DIR__ ."/{$dest}/{$destEntry} && "
+          . "cp -L -r {$entry} " . __DIR__ . "/{$dest}/{$destEntry} && "
+          . "rm " . __DIR__ . "/{$dest}/{$entry}"
         );
 
         continue ;
