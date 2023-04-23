@@ -1,0 +1,3 @@
+[submodule "result.minify/stress"]
+	path = result.minify/stress
+	url = https://github.com/andyedinborough/stress-css.git
