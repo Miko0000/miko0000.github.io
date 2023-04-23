@@ -1,0 +1,1 @@
+(()=>{window.addEventListener("touchmove",function(e){const[n]=e.touches,[s]=e.touches.slice(-1);let t;n.screenX>s.screenX?t="swipe-left":t="swipe-right",n.screenY>s.screenY?t+="-down":t+="-up"})})()

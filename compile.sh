@@ -1,4 +1,6 @@
 #!/bin/sh
+# create if not exists
+mkdir result
 # empty old result
 rm -r result/*;
 # run compile.php
