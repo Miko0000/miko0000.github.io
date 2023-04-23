@@ -1,1 +1,0 @@
-app.clock=function(){function t(e){return String(e).length>1?e:`0${e}`}function n(){const e=new Date;return t(e.getHours())+(Math.floor(Date.now()/1e3)%2?":":" ")+t(e.getMinutes())}const s=document.querySelector(".app.clock");s.textContent=n(),setInterval(function(){s.textContent=n()},1e3)}
