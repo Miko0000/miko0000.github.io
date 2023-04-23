@@ -1,1 +1,0 @@
-function flicker(e,t){let n=Date.now(),s=0;requestAnimationFrame(function o(){if(s)return;if(n>Date.now())return requestAnimationFrame(o);n=Date.now()+1e3/t,e(()=>s=1),requestAnimationFrame(o)})}
