@@ -1,0 +1,1 @@
+window.qevent=function(e,t,n){const o=this||window;let s=o.qeventListeners[e];if(s){const e=s.find(([e])=>e===t);return e?(e[1].push(n),this):(s.push([t,[n]]),this)}return s=o.qeventListeners[e]=[[t,[n]]],o.addEventListener(e,function({target:e}){for(const[t,n]of s)if(e.matches(t))for(const e of n)e.apply(this,arguments)}),o},window.qeventListeners={}

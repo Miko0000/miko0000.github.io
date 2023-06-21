@@ -1,0 +1,1 @@
+function consoleParse(e){for(;e;);}
