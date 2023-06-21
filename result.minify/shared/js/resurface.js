@@ -1,0 +1,1 @@
+window.addEventListener("DOMContentLoaded",function(){for(const e of document.querySelectorAll(".resurface"))e.remove(),document.body.appendChild(e)})

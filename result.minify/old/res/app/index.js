@@ -1,10 +1,1 @@
-const app = {};
-
-window.addEventListener("load", function init(){
-  for(const [ key, f ] of Object.entries(app)){
-    f();
-  }
-  
-  for(const el of document.querySelectorAll("head style.noscript"))
-    el.remove();
-});
+const app={};window.addEventListener("load",function(){for(const[t,e]of Object.entries(app))e();for(const e of document.querySelectorAll("head style.noscript"))e.remove()})

@@ -1,0 +1,1 @@
+async function fetcher(e,t){return fetch(e,t).then(e=>e.text())}window.addEventListener("DOMContentLoaded",async function(){const e=document.querySelectorAll(".fetcher");for(const n of e){const t=n.getAttribute("data-src");if(!t){console.log(t);continue}const s=await fetcher(t);n.innerHTML=s}})

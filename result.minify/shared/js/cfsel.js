@@ -1,0 +1,1 @@
+window.queryClimbSelector=function(e,t=10){if(!(this instanceof HTMLElement))return null;let n=this;for(;t--!==0&&n&&!n.matches(e);)n=n.parentElement;return n}

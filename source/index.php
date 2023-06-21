@@ -18,11 +18,20 @@
 		<?php include "local/body.php" ?>
 		<?php $top_back = true; ?>
 		<div class="banner">
-			<div>
+			<div class="background"></div>
+			<!--<img class="background" 
+				src="shared/res/1.jpg"
+			></img>-->
+			<div class="content">
 				<div class="title">Miko0000</div>
 				<div class="description">Fullstack Web Developer</div>
 			</div>
 			<div class="scroll-hint scroll-hint-down scroll-hint-definitive">V</div>
+			<div class="credit">
+				[Source] <a href="https://cdn.pixabay.com/photo/2022/12/24/11/42/home-7675773_960_720.jpg">
+					https://cdn.pixabay.com/photo/2022/12/24/11/42/home-7675773_960_720.jpg
+				</a>
+			</div>
 		</div>
 		<div class="content">
 			<div class="border-top"></div>
@@ -30,7 +39,7 @@
 				<div class="border-right"></div>
 				<div class="portrait">
 					<div class="burger">
-						<span class="material-symbols-outlined">menu</span>
+						<!--<span class="material-symbols-outlined">menu</span>-->
 					</div>
 				</div>
 
@@ -108,7 +117,9 @@
 						business.tarmikodeveloper@gmail.com
 					</a>
 					<br>
-					Discord: <span class="ctcopy" class="ctcopy">Miko0000#0040</span>
+					Discord (old): <span class="ctcopy" class="ctcopy">Miko0000#0040</span>
+					<br>
+					Discord: <span class="ctcopy" class="ctcopy">.miko0000</span>
 				</p>
 				<div class="ctcopy-popup">
 					Copied to clipboard
