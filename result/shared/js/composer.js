@@ -1,18 +1,25 @@
 async function composerCommand(q, ob){
-	const [ command, ...args ] = q.trim().split(/ +/);
-	const f = composerCommands[command];
-
+	const [ command, ...args ] = q.trim().split(/ +|\t+|\n+/);
+	const f = (this.commands || composerCommands)[command];
+	
+	//console.log("CC", command)
+	
 	if(f)
-		return await f.apply(this, [ ob, ...args ]);
+		return await f
+			.apply(this.commands || composerCommands, [ ob, ...args ]);
 }
 
-async function composer(str, ob){
+async function composer(str, ob, sob){
+	//console.log("Composer", this);
+	
 	ob = ob || Object.assign([ document.createElement("span") ], {
 		f: [],
 		reset(){
 			this.unshift(document.createElement("span"))
 		}
 	});
+	
+	ob.data = sob;
 
 	let i = 0;
 	//let o = '';
@@ -49,8 +56,10 @@ async function composer(str, ob){
 
 			q += str[i++];
 		}
+		
+		//console.log(this.commander)
 
-		await composerCommand(q, ob);
+		await (this.commander || composerCommand).apply(this, [ q, ob ]);
 		//console.log(q, ob)
 
 		q = '';
@@ -154,3 +163,12 @@ function composerHighlight(str){
  Lupin { slowtype 30 1 { vibrate }{ rainbow }} DIED! { reset }
 
 */
+
+class Composer {
+	constructor(){
+		
+	}
+}
+
+Composer.prototype.compose = composer;
+Composer.prototype.commander = composerCommand;

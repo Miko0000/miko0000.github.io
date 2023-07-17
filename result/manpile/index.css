@@ -1,0 +1,4 @@
+body > .banner > .background {
+	background-image: unset;
+	background-color: rgb(100, 100, 255);
+}

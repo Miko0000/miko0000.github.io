@@ -17,7 +17,7 @@
 	<body class="__mod-scroller scroll-hint-definition" ontouchstart="">
 		<?php include "local/body.php" ?>
 		<?php $top_back = true; ?>
-		<div class="banner">
+		<div class="banner banner-1">
 			<div class="background"></div>
 			<!--<img class="background" 
 				src="shared/res/1.jpg"
@@ -33,6 +33,7 @@
 				</a>
 			</div>
 		</div>
+		<div class="scrollwatch" data-for=".banner-1 .background"></div>
 		<div class="content">
 			<div class="border-top"></div>
 			<div class="twopan twopan-minor twopan-sticky menu">
@@ -43,15 +44,32 @@
 					</div>
 				</div>
 
-				<a href="#about-me">About Me</a>
-				<a href="#skills">Skills</a>
-				<a href="#hire-me">Hire Me</a>
-				<a href="#contact">Contact</a>
+				<a href="#about-me">
+					<span class="material-symbols-outlined">badge</span>
+					About Me
+				</a>
+				<a href="#skills">
+					<span class="material-symbols-outlined">handyman</span>
+					Skills
+				</a>
+				<a href="#hire-me">
+					<span class="material-symbols-outlined">history_edu</span>
+					Hire Me
+				</a>
+				<a href="#contact">
+					<span class="material-symbols-outlined">mail</span>
+					Contact
+				</a>
+				<br />
+				<a href="#site-map" class="green">
+					<span class="material-symbols-outlined">map</span>
+					Site Map
+				</a>
 			</div>
 
 			<div class="twopan twopan-major content">
 				<div class="section">
-					<h1>About Me</h1>
+					<h1><span class="material-symbols-outlined">badge</span> About Me</h1>
 					<a id="about-me" href="#about-me" class="ctcopy">#</a>
 				</div>
 				<p>
@@ -72,11 +90,10 @@
 					<a href="projects">projects</a>
 				</p>
 				<div class="section">
-					<h1>Skills</h1>
+					<h1><span class="material-symbols-outlined">handyman</span> Skills</h1>
 					<a id="skills" href="#skills" class="ctcopy">#</a>
 				</div>
 				<h3>Web Frontend</h3>
-
 				<?php
 					echo pbar("HTML", 90, "blue")
 						, pbar("CSS", 70, "green")
@@ -104,12 +121,12 @@
 				?>
 
 				<div class="section">
-					<h1>Hire Me</h1>
+					<h1><span class="material-symbols-outlined">history_edu</span>Hire Me</h1>
 					<a id="hire-me" href="#hire-me" class="ctcopy">#</a>
 				</div>
 				<p>I'm currently not open for hire, sorry.</p>
 				<div class="section">
-					<h1>Contact</h1>
+					<h1><span class="material-symbols-outlined">email</span> Contact</h1>
 					<a id="contact" href="#contact" class="ctcopy">#</a>
 				</div>
 				<p>
@@ -125,6 +142,27 @@
 					Copied to clipboard
 				</div>
 			</div>
+		</div>
+		<div class="banner banner-2">
+			<div class="background"></div>
+			<div class="credit">
+				[source] <a href="https://cdn.pixabay.com/photo/2023/04/14/23/06/ai-generated-7926621_960_720.jpg">
+					https://cdn.pixabay.com/photo/2023/04/14/23/06/ai-generated-7926621_960_720.jpg
+				</a>
+			</div>
+		</div>
+		<div class="banner-padding"></div>
+		<div class="scrollwatch" data-for=".banner-2 .background"></div>
+		<div class="content">
+			<h1 class="center">Site Map</h1>
+			
+			<div id="site-map">
+				
+			</div>
+			
+			<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+			<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+			<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 		</div>
 	</body>
 </html>

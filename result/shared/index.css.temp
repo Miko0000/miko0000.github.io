@@ -1,0 +1,501 @@
+:root {
+	--font-size: 2.4rem;
+}
+
+* {
+	box-sizing: border-box;
+	
+	/*user-select: none;*/
+}
+
+/*
+p, a, h1, h2, h3, h4, h5, h6, span
+{
+	user-select: auto
+}
+*/
+
+.center {
+	text-align: center;
+}
+
+span {
+	vertical-align: middle;
+}
+
+.nosel {
+	user-select: none;
+}
+
+*:focus {
+	/*outline: 2px solid white;*/
+	/*outline: 2px solid white;*/
+}
+
+.template {
+	display: none;
+}
+
+.invisible {
+	visibility: hidden;
+}
+
+.pbar {
+	overflow: hidden;
+	
+	height: 4.2rem;
+}
+
+.pbar.yellow {
+	--bg-color: rgb(255, 255, 125);
+}
+
+.pbar.blue {
+	--bg-color: rgb(125, 125, 255);
+}
+
+.pbar.red {
+	--bg-color: rgb(255, 125, 125);
+}
+
+.anchor {
+	position: relative;
+}
+
+.anchor.bottom {
+	top: 50%;
+}
+
+.material-symbols-outlined {
+	font-size: inherit;
+}
+
+.scroll-hint {
+	animation-name: wiggle-vertical;
+	animation-duration: 1s;
+	animation-timing-function: ease-in;
+	animation-iteration-count: infinite;
+	animation-fill-mode: forwards;
+	animation-direction: alternate;
+
+	font-family: Gruppo;
+	opacity: 0.5;
+	cursor: pointer;
+}
+
+.scroll-hint.horizontal {
+	animation-name: wiggle-horizontal;
+}
+
+html {
+	/*I accidentally changed things at 50% zoom, so I cut this in half*/
+	font-size: 8px;
+}
+
+body {
+	position: relative;
+	left: 0px;
+	top: 0px;
+
+	padding: 0px;
+	margin: 0px;
+
+	width: 100vw;
+	min-height: 100vh;
+
+	overflow: hidden;
+	overflow-y: scroll;
+
+	background-color: rgb(32, 32, 32);
+	color: white;
+
+	font-size: var(--font-size);
+	font-family: Abel;
+
+	z-index: -1;
+}
+
+body > .banner {
+	position: sticky;
+	top: 0px;
+	left: 0px;
+
+	border-bottom: 2px solid rgb(16, 16, 16);
+	width: 100%;
+	height: 100vh;
+
+	/*background-image: url(../local/banner-1.png),*/
+		/*linear-gradient(
+			30deg, rgba(12, 175, 12, 0.2), rgba(12, 12, 175, 1)
+		)
+		, linear-gradient(
+			30deg, rgba(8, 8, 8, 0.2), rgba(8, 8, 8, 0.2)
+		)
+		,*/ url(../local/banner-2.png)
+		;
+	/*background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY8gzqp9KoXKuVdZZ9FjYGONhBtZJVbZSRTXSppj5sBmN4atRDBb2CXy2SameLl8PgtM8&usqp=CAU);*/
+
+	font-family: Fredericka the Great;
+	font-weight: light;
+
+	margin-bottom: 2%;
+
+	z-index: -1;
+}
+
+body > .banner > .background {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	
+	width: 100%;
+	height: 100%;
+	
+	transform: translate3d(0, 0, 1px);
+	backface-visibility: hidden;
+	
+	background-size: cover;
+	/*https://img.freepik.com/free-photo/brick-wall-background_53876-88655.jpg?w=740&t=st=1687178684~exp=1687179284~hmac=e55a7900647ec59b9fa7ddea8f81be006061fd1b8af92bc34023a07c3b679497*/
+	background-image: url(
+		res/1.jpg
+	);
+	background-position: center, center;
+	background-color: rgb(16, 32, 32);
+	filter: grayscale(0.2) brightness(0.4);
+}
+
+body > .banner > * {
+	position: relative;
+}
+
+body > .banner > .content {
+	left: 10%;
+	top: 40%;
+}
+
+body > .banner .title {
+	/*font-size: 72px;*/
+	font-size: 4em;
+	font-weight: bold;
+	font-family: Rampart One;
+}
+
+body > .banner .description {
+	font-size: 2em;
+}
+
+body > .banner .credit {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	
+	font-family: abel;
+	font-size: 0.8em;
+}
+
+body > .banner > .border-bottom {
+	height: 5%;
+	width: 100%;
+
+	position: absolute;
+	top: 100%;
+	left: 0%;
+	z-index: 1;
+
+	transform: translateY(-5%);
+
+	/*border: 2px solid red;*/
+	background-image: url(../local/banner-border-bottom.png);
+	background-size: cover;
+
+	border-bottom: 2px solid black;
+}
+
+body > .banner > .scroll-hint {
+	position: absolute;
+	top: 90%;
+	left: 50%;
+
+	transform: translateX(-50%);
+
+	font-weight: bold;
+	font-size: 2em;
+
+	--wiggle-vertical-distance: 16px;
+	z-index: 9;
+}
+
+body .border-top {
+	height: 5vh;
+	width: 100vw;
+
+	/*position: absolute;*/
+	position: relative;
+	top: 0%;
+	left: -1%;
+	z-index: 1;
+
+	/*transform: translateY(-95%);*/
+	transform: translateY(-6%);
+
+	background-image: url(../local/banner-border-bottom.png);
+	background-size: cover;
+
+	border-bottom: 2px solid black;
+}
+
+body > .content {
+	position: relative;
+	background-color: rgb(16, 16, 16);
+
+	padding: 1%;
+	padding-top: 0%;
+	font-size: 0px;
+	/*padding-bottom: 5%;*/
+}
+
+body > .content > * {
+	font-size: 3.2rem;
+
+	/*vertical-align: top;*/
+}
+
+body > .content > .menu {
+	top: 10%;
+
+	height: calc(100vh - 3em);
+	padding: 16px;
+
+	/*background-image: url(local/cbg.png);*/
+	background-repeat: repeat;
+	overflow-y: scroll;
+}
+
+body > .content > .menu > a {
+	display: list-item;
+	text-decoration: none;
+
+	font-weight: bold;
+	border-bottom: 2px solid rgba(100, 100, 255, 0.2);
+
+	transition: border-bottom 0.8s, text-indent 0.3s;
+	list-style-type: none;
+	text-indent: 0px;
+}
+
+body > .content > .menu > a:hover,
+body > .content > .menu > a:focus {
+	border-bottom: 2px solid rgba(100, 100, 255, 1);
+	transition: border-bottom 0.1s, text-indent 0.1s;
+	text-indent: 32px;
+}
+
+body > .content > .menu > a.green {
+	color: rgb(100, 255, 120);
+}
+
+body > .content > .menu > a > span {
+	vertical-align: middle;
+}
+
+body > .content > .menu > .footer {
+	border-top: 2px solid rgb(100, 100, 255);
+	font-family: monospace;
+	font-size: 0.50em;
+}
+
+body > .content > .content {
+	position: relative;
+	left: 0px;
+	top: 0px;
+
+	width: 70%;
+	border-left: 2px solid rgba(8, 8, 8, 0.2);
+	background-color: rgb(24, 24, 24);
+	background-image: url(../local/cbg.png);
+	background-repeat: repeat;
+	background-size: 30% auto;
+	padding: 1%;
+}
+
+body > .content > .content > .section > * {
+	display: inline;
+}
+
+body > .content > .content > .section > a {
+
+}
+
+body > .content > .content > .section > h1 {
+	border-top: 2px solid rgba(100, 100, 255, 0.5);
+	background-image: linear-gradient(
+		0deg, rgba(100, 100, 255, 0) 20%, rgba(100, 100, 255, 0.4)
+	);
+	padding-left: 32px;
+	padding-right: 32px;
+}
+
+body > .content > .content > .section {
+	margin-top: 32px;
+}
+
+body > .content > .content > .section:first-child {
+	margin-top: 0px;
+}
+
+body > .content > .content > .pbar {
+	display: inline-block;
+	width: 49%;
+	margin-right: 0.5%;
+}
+
+body[data-scroll='0'] > nav.top {
+	background-color: rgba(8, 8, 8, 0);
+	height: 4em;
+	transition: font-size 0.2s, height 0.2s, background-color 0.4s;
+	border-bottom: none;
+	backdrop-filter: blur(0px);
+}
+
+body[data-scroll='0'] > nav.top .icon {
+	transition: font-size 0.2s, transform 0.2s;
+	font-size: 3.5em;
+}
+
+body[data-scroll='0'] > nav.top .icon:hover {
+	font-size: 3.2em;
+}
+
+body[data-scroll='0'] > nav:hover {
+	background-color: rgba(8, 8, 8, 0.4);
+}
+
+body[data-scroll='0'] > nav .title {
+	/*position: relative;
+	left: -100%;
+	transition: left 0.5s;
+
+	opacity: 0;*/
+	display: none;
+}
+
+a {
+	color: lightBlue;
+}
+
+nav.top {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+
+	height: 3em;
+	width: 100%;
+	background-color: rgba(8, 8, 8, 0.4);
+	transition: font-size 0.2s, height 0.2s, background-color 0.4s;
+
+	z-index: 4;
+	padding-right: 1%;
+	padding-left: 1%;
+
+	border-bottom: 2px solid black;
+	backdrop-filter: blur(8px);
+}
+
+nav.top > div {
+	display: inline-block;
+	position: relative;
+
+	top: 50%;
+	transform: translateY(-50%);
+	/*border: thin solid red;*/
+	margin-left: 1%;
+	margin-right: 1%;
+
+	vertical-align: top;
+}
+
+nav.top > div.right {
+	float: right;
+}
+
+nav.top .icon {
+	display: inline-block;
+	font-size: 3em;
+	transition: font-size 0.2s, transform 0.2s;
+}
+
+nav.top .icon:active, nav.top .icon.active {
+	display: inline-block;
+	font-size: 3em;
+	transition: font-size 0.2s, transform 0.2s;
+	filter: brightness(0.8);
+}
+
+nav.top .icon:hover {
+	font-size: 2.9em;
+	transform: rotate(-5deg);
+}
+
+nav.top .title {
+	font-size: 1.5em;
+	font-weight: bold;
+
+	left: 0px;
+
+	padding-right: 1%;
+
+	border-right: 2px solid rgba(200, 255, 200, 0.2);
+
+	transition: left 0.5s;
+}
+
+.hint-content {
+	display: none;
+}
+
+.hintbox {
+	position: fixed;
+	display: none;
+
+	z-index: 9;
+	/*border: 1px solid red;*/
+	min-height: 16px;
+
+	transform: translate(16px, 16px);
+}
+
+.hintbox.active {
+	display: block;
+}
+
+.hintbox .hint-content {
+	display: unset;
+}
+
+.ctcopy {
+	color: rgb(100, 255, 100);
+	text-decoration: underline;
+}
+
+.ctcopy-popup {
+	opacity: 0;
+	position: fixed;
+	left: 50%;
+	bottom: -10%;
+	transform: translateX(-50%);
+	border: 2px solid green;
+	border-radius: 5px;
+	background-color: rgba(100, 255, 100, 0.3);
+	padding: 1%;
+	font-weight: bold;
+	transition: bottom 0.5s, opacity 0.1s;
+	backdrop-filter: blur(8px);
+	z-index: 999;
+}
+
+.ctcopy-popup.active {
+	display: block;
+	bottom: 5%;
+	opacity: 1;
+	transition: bottom 0.2s, opacity 0.1s;
+}

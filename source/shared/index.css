@@ -15,6 +15,19 @@ p, a, h1, h2, h3, h4, h5, h6, span
 }
 */
 
+.scout {
+	position: absolute;
+	visibility: hidden;
+}
+
+.center {
+	text-align: center;
+}
+
+span {
+	vertical-align: middle;
+}
+
 .nosel {
 	user-select: none;
 }
@@ -80,7 +93,9 @@ p, a, h1, h2, h3, h4, h5, h6, span
 }
 
 html {
-	font-size: 16px;
+	/*I accidentally changed things at 50% zoom, so I cut this in half*/
+	font-size: 8px;
+	scroll-behavior: smooth;
 }
 
 body {
@@ -216,6 +231,10 @@ body > .banner > .scroll-hint {
 	z-index: 9;
 }
 
+body > .banner-padding {
+	height: 60px;
+}
+
 body .border-top {
 	height: 5vh;
 	width: 100vw;
@@ -254,11 +273,12 @@ body > .content > * {
 body > .content > .menu {
 	top: 10%;
 
-	height: 100vh;
+	height: calc(100vh - 3em);
 	padding: 16px;
 
 	/*background-image: url(local/cbg.png);*/
 	background-repeat: repeat;
+	overflow-y: scroll;
 }
 
 body > .content > .menu > a {
@@ -278,6 +298,20 @@ body > .content > .menu > a:focus {
 	border-bottom: 2px solid rgba(100, 100, 255, 1);
 	transition: border-bottom 0.1s, text-indent 0.1s;
 	text-indent: 32px;
+}
+
+body > .content > .menu > a.green {
+	color: rgb(100, 255, 120);
+}
+
+body > .content > .menu > a > span {
+	vertical-align: middle;
+}
+
+body > .content > .menu > .footer {
+	border-top: 2px solid rgb(100, 100, 255);
+	font-family: monospace;
+	font-size: 0.50em;
 }
 
 body > .content > .content {
